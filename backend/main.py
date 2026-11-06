@@ -13,7 +13,6 @@ load_dotenv()                        # ← 读同目录下的 .env
 
 ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS").split(",")
 
-
 app = FastAPI()
 
 init_db()
