@@ -45,6 +45,25 @@ export default function RootLayout({ children }) {
             <main className="page-content">{children}</main>
           </div>
         </div>
+
+        {/* 底部备案信息 - 先放ICP，公安通过后再补 */}
+        <footer style={{
+          textAlign: 'center',
+          padding: '20px 16px',
+          fontSize: '14px',
+          color: '#666',
+          borderTop: '1px solid #eee'
+        }}>
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#666', textDecoration: 'none' }}
+          >
+            辽ICP备2026027768号
+          </a>
+        </footer>
+
       </body>
     </html>
   );
