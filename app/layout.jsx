@@ -18,6 +18,10 @@ import "../css/responsive.css";
 export const metadata = {
   title: "zero to tech",
   description: "个人主页 + 文字实验室",
+  icons: {
+    icon: "/favicon.ico",   // 对应 public/favicon.ico
+    shortcut: "/favicon.ico", // 兼容旧版浏览器的 shortcut 写法
+  },
 };
 
 export default function RootLayout({ children }) {
