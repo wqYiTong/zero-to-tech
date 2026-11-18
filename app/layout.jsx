@@ -1,11 +1,3 @@
-// app/layout.jsx 是 Next.js 的"全站外壳"——所有页面都套在它里面。
-// 它取代了 4.4 的 index.html + main.jsx + App.jsx 最外面那层壳：
-//   - <html>/<body> 由它提供；
-//   - app-shell / page-shell / page-content 这层包裹，和 4.4 App.jsx 里一模一样；
-//   - 4.4 main.jsx 里那 8 行 import CSS，原样搬到这里（顺序不变）。
-// 注意：导航条 Nav 不在这儿，它在每一页的 hero 里（HomeView / TextLabView 各放一份），
-// 这样整页布局和 4.4 完全一致。
-
 import "../css/reset.css";
 import "../css/variables.css";
 import "../css/layout.css";
@@ -15,18 +7,38 @@ import "../css/cards.css";
 import "../css/lab.css";
 import "../css/responsive.css";
 
+// 引入 Next.js 内置脚本组件
+import Script from 'next/script'
+
 export const metadata = {
   title: "zero to tech",
   description: "个人主页 + 文字实验室",
   icons: {
-    icon: "/favicon.ico",   // 对应 public/favicon.ico
-    shortcut: "/favicon.ico", // 兼容旧版浏览器的 shortcut 写法
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="zh-CN">
+      {/* 1. 初始化 dataLayer：保证在 gtm.js 加载前执行 */}
+      <Script id="gtm-init" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        `}
+      </Script>
+
+      {/* 2. 加载外部 gtm.js：页面可交互后异步加载，不阻塞首屏 */}
+      <Script
+        id="gtm-script"
+        src="https://www.googletagmanager.com/gtm.js?id=GTM-53JPKK8Z"
+        strategy="afterInteractive"
+        async
+      />
+
       <body>
         <div className="app-shell">
           <div className="page-shell">
