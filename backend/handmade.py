@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 profile = {
-    "heroTitle": "关于我",
+    "heroTitle": "我叫麦麦",
     "heroSubtitle": "项目，创意，灵感，心得，我的作品",
 }
 
