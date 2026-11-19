@@ -14,6 +14,9 @@ export default function Nav() {
   const items = [
     { href: "/", label: "个人主页" },
     { href: "/text-lab", label: "文字实验室" },
+    // 小游戏放在 public/quiz/ 里，是独立的静态页面，所以用普通 <a> 整页跳转，
+    // 不走 Next 的客户端路由（那边没有对应的 React 页面）。
+    { href: "/quiz/", label: "人格测试", plain: true },
   ];
 
   return (
@@ -23,6 +26,13 @@ export default function Nav() {
         {items.map((it) => {
           const active =
             it.href === "/" ? pathname === "/" : pathname.startsWith(it.href);
+          if (it.plain) {
+            return (
+              <a key={it.href} href={it.href} className="nav-link">
+                {it.label}
+              </a>
+            );
+          }
           return (
             <Link
               key={it.href}
