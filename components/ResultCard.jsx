@@ -11,9 +11,9 @@ export default function ResultCard({ result, onOpenHistory }) {
 
   const original = result
     ? result.text
-    : "今天的风很轻，适合把脑海里的想法慢慢写下来。";
+    : "我们无论遇到什么困难，都不要怕，微笑着面对他！";
   const pinyin = result ? result.pinyin : "jīn tiān de fēng hěn qīng …";
-  const score = result ? result.score : 0.86;
+  const score = result ? result.score : 0.93;
   const label = result ? result.label : "偏积极";
 
   useEffect(() => {
