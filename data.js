@@ -137,10 +137,10 @@ window.QUIZ_DATA = {
     {
       id: "q009",
       axis: "EI",
-      text: "你的微信状态：",
+      text: "你是麦麦吗？",
       options: [
-        { pole: "E", text: "一天换三条，主要看心情。" },
-        { pole: "I", text: "上一次更新还是三年前。" }
+        { pole: "E", text: "是的，我就是！" },
+        { pole: "I", text: "什么麦麦？没听说过。" }
       ]
     },
     {
