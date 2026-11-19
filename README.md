@@ -36,7 +36,32 @@ python -m http.server 8080
 
 ## 部署
 
-这个目录本身就是构建产物，不需要打包：
+这个目录本身就是网站根目录，不需要打包、不需要构建。两种方式选一种。
+
+### 方式一：服务器上 git pull（推荐）
+
+首次在服务器上克隆：
+
+```bash
+sudo mkdir -p /var/www
+sudo git clone https://github.com/wqYiTong/zero-to-tech.git /var/www/quiz
+sudo chmod -R a+rX /var/www/quiz
+```
+
+私有仓库要先给服务器配权限：用带 token 的 HTTPS 地址，或者在 GitHub 仓库 Settings → Deploy keys 里加服务器公钥。
+
+以后每次更新：
+
+```bash
+cd /var/www/quiz
+sudo git pull --ff-only
+```
+
+静态文件改完立即生效，不用 build、不用重启 nginx，浏览器 `Ctrl + F5` 强刷即可。
+
+> 仓库根目录就是网站根目录，所以 nginx 一定要禁止访问 `.git`（下面配置里已经加了），否则别人可能读到仓库内容。
+
+### 方式二：rsync 上传
 
 ```bash
 rsync -avz --exclude '.git' ./ user@your-server:/var/www/quiz/
@@ -54,6 +79,11 @@ server {
     location / {
         try_files $uri $uri/ =404;
     }
+
+    # 不允许访问 .git 等隐藏目录
+    location ~ /\.git {
+        deny all;
+    }
 }
 ```
 
@@ -62,7 +92,7 @@ Caddy：
 ```
 maimai.vip {
     root * /var/www/quiz
-    file_server
+    file_server hide .git
 }
 ```
 
