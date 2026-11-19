@@ -12,7 +12,7 @@ export default function ResultCard({ result, onOpenHistory }) {
   const original = result
     ? result.text
     : "我们无论遇到什么困难，都不要怕，微笑着面对他！";
-  const pinyin = result ? result.pinyin : "jīn tiān de fēng hěn qīng …";
+  const pinyin = result ? result.pinyin : "(dong yong ji xu!)";
   const score = result ? result.score : 0.93;
   const label = result ? result.label : "偏积极";
 
