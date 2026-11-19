@@ -11,7 +11,7 @@ import "../css/responsive.css";
 import Script from 'next/script'
 
 export const metadata = {
-  title: "zero to tech",
+  title: "麦麦.vip",
   description: "个人主页 + 文字实验室",
   icons: {
     icon: "/favicon.ico",
