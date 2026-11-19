@@ -15,7 +15,7 @@ export const home = {
     linkLabel: "打开作品",
   },
   identity: {
-    motto: "闲话终日有，不听自然无。",
+    motto: "闲话终日有，不听自然无",
     learning: "快点振作起来",
   },
 };

@@ -46,7 +46,7 @@ profile = {
       "linkLabel": "打开作品",
   },
   "identity": {
-      "motto": "闲话终日有，不听自然无。",
+      "motto": "闲话终日有，不听自然无",
       "learning": "赶快振作起来",
   },
 }
