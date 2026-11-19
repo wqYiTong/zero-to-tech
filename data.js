@@ -12,7 +12,7 @@ window.QUIZ_DATA = {
     duration: "约 8 分钟",
     siteName: "麦麦.vip",
     homeUrl: "/",
-    shareUrl: "https://xn--0b7aa.vip//",
+    shareUrl: "https://xn--0b7aa.vip/",
     icp: "辽ICP备2026027768号",
     disclaimer: "本所不做心理诊断，结果仅供娱乐，请勿用于相亲、面试或任何人生重大决策。"
   },
