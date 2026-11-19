@@ -37,7 +37,7 @@ def get_session_id(request: Request, response: Response) -> str:
     return sid
 
 profile = {
-    "heroTitle": "关于我",
+    "heroTitle": "我叫麦麦",
     "heroSubtitle": "项目，创意，灵感，心得，我的作品",
     "featuredWork": {
       "kicker": "作品",
@@ -46,8 +46,8 @@ profile = {
       "linkLabel": "打开作品",
   },
   "identity": {
-      "motto": "已识乾坤大，尤怜草木青",
-      "learning": "零到全栈",
+      "motto": "闲话终日有，不听自然无。",
+      "learning": "赶快振作起来",
   },
 }
 
